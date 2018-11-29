@@ -79,7 +79,7 @@ fhandle.close()
 proxy_addr = "123.57.84.116:8118"
 proxy = urllib.request.ProxyHandler({'http':proxy_addr})
 opener = urllib.request.build_opener(proxy, urllib.request.HTTPHandler)
-data = urllib.request.urlopen(url).read()
+data = opener.open(url).read()
 fhandle = open("./proxy.html","wb")
 fhandle.write(data)
 fhandle.close()
